@@ -3,6 +3,8 @@ resource "aws_dynamodb_table" "vip-dynamodb-table" {
   billing_mode = "PROVISIONED"
   hash_key     = "UserId"
   range_key    = "videoname"
+  read_capacity = 1
+  write_capacity = 1
 
   attribute {
     name = "UserId"
@@ -10,17 +12,7 @@ resource "aws_dynamodb_table" "vip-dynamodb-table" {
   }
 
   attribute {
-    name = "Username"
-    type = "S"
-  }
-
-  attribute {
     name = "videoname"
-    type = "S"
-  }
-
-  attribute {
-    name = "bucketUrl"
     type = "S"
   }
 

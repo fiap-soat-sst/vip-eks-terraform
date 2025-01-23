@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "video_bucket" {
-  bucket = "vip-video-bucket"
+  bucket = "vip-soat-videos-bucket"
 
   tags = {
     Name        = "video bucket"
@@ -7,17 +7,17 @@ resource "aws_s3_bucket" "video_bucket" {
   }
 }
 
-resource "aws_s3_bucket" "image_bucket" {
-  bucket = "vip-image-bucket"
+resource "aws_s3_bucket" "grouped_images_bucket" {
+  bucket = "vip-soat-grouped-images-bucket"
 
   tags = {
-    Name        = "images bucket"
+    Name        = "grouped images bucket"
     Environment = "Production"
   }
 }
 
 resource "aws_s3_bucket" "compacted_image_bucket" {
-  bucket = "vip-compacted-image-bucket"
+  bucket = "vip-soat-compacted-image-bucket"
 
   tags = {
     Name        = "compacted images bucket"

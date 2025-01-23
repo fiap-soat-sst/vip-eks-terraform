@@ -6,9 +6,9 @@ terraform {
     }
   }
   cloud {
-    organization = "vip-fiap-soat"
+    organization = "sst-fiap-soat"
     workspaces {
-      name = "vip-eks-terraform"
+      name = "vip-terraform"
     }
   }
 }
