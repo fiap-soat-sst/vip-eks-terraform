@@ -7,3 +7,7 @@ resource "aws_elasticache_cluster" "redis" {
   engine_version       = "4.0.10"
   port                 = 6379
 }
+
+output "redis_url" {
+  value = aws_elasticache_cluster.redis.cache_nodes.0.address
+}
