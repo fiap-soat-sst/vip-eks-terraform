@@ -21,9 +21,9 @@ provider "kubernetes" {
 #   source = "./modules/vip-process-video"
 # }
 
-# module "vip-compress-file" {
-#   source = "./modules/vip-compress-file"
-# }
+module "vip-compress-file" {
+  source = "./modules/vip-compress-file"
+}
 
 # module "vip-manager" {
 #   source = "./modules/vip-manager"
