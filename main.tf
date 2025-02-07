@@ -13,18 +13,18 @@ provider "kubernetes" {
   }
 }
 
-# module "vip-error-notification" {
-#   source = "./modules/vip-error-notification"
-# }
+module "vip-error-notification" {
+  source = "./modules/vip-error-notification"
+}
 
-# module "vip-process-video" {
-#   source = "./modules/vip-process-video"
-# }
+module "vip-process-video" {
+  source = "./modules/vip-process-video"
+}
 
 module "vip-compress-file" {
   source = "./modules/vip-compress-file"
 }
 
-# module "vip-manager" {
-#   source = "./modules/vip-manager"
-# }
+module "vip-manager" {
+  source = "./modules/vip-manager"
+}

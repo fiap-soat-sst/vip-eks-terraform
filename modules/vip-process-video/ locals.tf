@@ -1,5 +1,5 @@
 locals {
-  namespace             = "vip-fiap-soat"
+  namespace             = "vip-fiap-soat" // não mudar
   application_main_name = "vip-compress-file"
   app_short_name        = "vip-cmprss"
   app_port              = 3125
@@ -16,7 +16,7 @@ locals {
 
   docker = {
     image_name    = "evilfeeh/vip-compress-file"
-    image_version = "latest"
+    image_version = "latest" // não mudar
   }
 
   container_startup_command = ["npm", "run", "migration:up"]
