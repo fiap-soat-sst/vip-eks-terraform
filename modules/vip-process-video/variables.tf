@@ -32,3 +32,13 @@ variable "JWT_SECRET" {
   default = "none"
   type    = string
 }
+
+variable "sns_topic_arn" {
+  description = "The ARN of the SNS topic"
+  type        = string
+}
+
+variable "sns_topic" {
+  description = "The ARN of the SNS topic"
+  type        = string
+}
