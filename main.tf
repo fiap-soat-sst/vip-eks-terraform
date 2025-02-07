@@ -19,6 +19,9 @@ module "vip-notification" {
 
 module "vip-process-video" {
   source = "./modules/vip-process-video"
+
+  sns_topic_arn = aws_sns_topic.vip_manager_to_process.arn
+  sns_topic = aws_sns_topic.vip_manager_to_process.name
 }
 
 module "vip-compress-file" {

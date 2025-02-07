@@ -1,4 +1,4 @@
-resource "kubernetes_service" "mking_api" {
+resource "kubernetes_service" "service_api" {
   metadata {
     name      = "${local.app_short_name}-service"
     namespace = local.namespace
@@ -25,4 +25,9 @@ resource "kubernetes_service" "mking_api" {
   }
 
   depends_on = [kubernetes_deployment.deployment_api]
+}
+
+output "load_balancer_url" {
+  description = "The external URL of the LoadBalancer"
+  value       = kubernetes_service.service_api.status.0.load_balancer.0.ingress.0.hostname
 }

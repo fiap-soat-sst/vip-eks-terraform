@@ -28,16 +28,17 @@ locals {
   }
 
   config_map_data = {
-    PORT            = var.PORT
+    PORT = var.PORT
+    SNS_TOPIC_ARN = var.sns_topic_arn
   }
 
 
   secrets_data = {
-    AWS_REGION = var.AWS_REGION
-    AWS_S3_BUCKET_SOURCE     = var.AWS_S3_BUCKET_SOURCE
+    AWS_REGION                = var.AWS_REGION
+    AWS_S3_BUCKET_SOURCE      = var.AWS_S3_BUCKET_SOURCE
     AWS_S3_BUCKET_DESTINATION = var.AWS_S3_BUCKET_DESTINATION
-    AWS_TABLE_USERS     = var.AWS_TABLE_USERS
-    AWS_SNS_TOPIC     = var.AWS_SNS_TOPIC
-    PORT = var.PORT
+    AWS_TABLE_USERS           = var.AWS_TABLE_USERS
+    AWS_SNS_TOPIC             = var.AWS_SNS_TOPIC
+    PORT                      = var.PORT
   }
 }
