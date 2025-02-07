@@ -23,7 +23,7 @@ variable "JWT_SECRET" {
   type    = string
 }
 
-variable "port" {
+variable "PORT" {
   default = 3125
   type    = number
 }

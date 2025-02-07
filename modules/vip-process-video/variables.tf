@@ -27,3 +27,8 @@ variable "PORT" {
   default = 3001
   type    = number
 }
+
+variable "JWT_SECRET" {
+  default = "none"
+  type    = string
+}

@@ -13,8 +13,8 @@ provider "kubernetes" {
   }
 }
 
-module "vip-error-notification" {
-  source = "./modules/vip-error-notification"
+module "vip-notification" {
+  source = "./modules/vip-notification"
 }
 
 module "vip-process-video" {
