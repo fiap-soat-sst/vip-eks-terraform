@@ -20,7 +20,7 @@ variable "email_host" {
 }
 
 variable "email_port" {
-  default = "none"
+  default = 587
   type = number
 }
 
