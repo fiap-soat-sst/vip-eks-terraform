@@ -21,7 +21,6 @@ locals {
 
   container_startup_command = ["npm", "run", "start"]
 
-
   hpa_replicas = {
     min                               = 1
     max                               = 10
