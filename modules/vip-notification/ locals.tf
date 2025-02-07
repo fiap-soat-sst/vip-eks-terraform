@@ -1,7 +1,7 @@
 locals {
   namespace             = "vip-fiap-soat" // não mudar
-  application_main_name = "vip-compress-file"
-  app_short_name        = "vip-cmprss"
+  application_main_name = "vip-notification"
+  app_short_name        = "vip-notif"
   app_port              = 3125
   deployment_resources = {
     limits = {
@@ -15,12 +15,13 @@ locals {
   }
 
   docker = {
-    image_name    = "evilfeeh/vip-compress-file"
+    image_name    = "tomasjr/vip-notification"
     image_version = "latest" // não mudar
   }
 
-  container_startup_command = ["npm", "run", "migration:up"]
-
+  container_startup_command = [
+    "node", "./dist/src/External/Api/Server.js"
+  ]
 
   hpa_replicas = {
     min                               = 1
@@ -37,12 +38,12 @@ locals {
 
 
   secrets_data = {
-    DB_DATABASE = var.db_database
-    DB_HOST     = var.db_host
-    DB_PASSWORD = var.db_password
-    DB_PORT     = 3306
-    DB_TYPE     = var.db_type
-    DB_USERNAME = var.db_username
-    PORT        = 3000
+    PORT            = 3000
+    AWS_REGION      = var.aws_region
+    AWS_TABLE_USERS = var.aws_table_users
+    EMAIL_HOST      = var.email_host
+    EMAIL_PORT      = var.email_port
+    EMAIL_USER      = var.email_user
+    EMAIL_PASSWORD  = var.email_password
   }
 }
