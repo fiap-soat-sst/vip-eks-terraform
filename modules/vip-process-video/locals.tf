@@ -1,7 +1,7 @@
 locals {
   namespace             = "vip-fiap-soat" // não mudar
-  application_main_name = "vip-compress-file"
-  app_short_name        = "vip-cmprss"
+  application_main_name = "vip-process-video"
+  app_short_name        = "vip-prcss"
   app_port              = 3125
   deployment_resources = {
     limits = {
@@ -15,7 +15,7 @@ locals {
   }
 
   docker = {
-    image_name    = "evilfeeh/vip-compress-file"
+    image_name    = "evilfeeh/vip-process-video"
     image_version = "latest" // não mudar
   }
 

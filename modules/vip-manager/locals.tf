@@ -1,7 +1,7 @@
 locals {
   namespace             = "vip-fiap-soat" // não mudar
-  application_main_name = "vip-manager"
-  app_short_name        = "vip-manager"
+  application_main_name = "vip-manager-sevice"
+  app_short_name        = "vip-mngr"
   app_port              = 3126
   deployment_resources = {
     limits = {
@@ -15,7 +15,7 @@ locals {
   }
 
   docker = {
-    image_name    = "evilfeeh/vip-manager"
+    image_name    = "evilfeeh/manager-service"
     image_version = "latest" // não mudar
   }
 
