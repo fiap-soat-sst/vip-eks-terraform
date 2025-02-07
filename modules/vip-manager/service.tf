@@ -1,4 +1,4 @@
-resource "kubernetes_service" "mking_api" {
+resource "kubernetes_service" "service_api" {
   metadata {
     name      = "${local.app_short_name}-service"
     namespace = local.namespace
