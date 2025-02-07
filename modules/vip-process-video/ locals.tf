@@ -37,12 +37,12 @@ locals {
 
 
   secrets_data = {
-    DB_DATABASE = var.db_database
-    DB_HOST     = var.db_host
-    DB_PASSWORD = var.db_password
-    DB_PORT     = 3306
-    DB_TYPE     = var.db_type
-    DB_USERNAME = var.db_username
-    PORT        = 3000
+    AWS_REGION='us-east-1'
+    AWS_S3_BUCKET_SOURCE='manager-upload-videos-hackaton'
+    AWS_S3_BUCKET_DESTINATION='process-upload-videos-hackaton'
+    AWS_TABLE_USERS='users'
+    AWS_SNS_TOPIC='arn:aws:sns:us-east-1:938703229189:compress-video'
+    PORT=3001
+    JWT_SECRET='QXJxdWl0ZXR1cmFEZVNvZnR3YXJlNlNPQVRGYXNlM1RlY2hDaGFsbGVuZ2U='
   }
 }
