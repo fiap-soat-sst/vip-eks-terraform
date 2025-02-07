@@ -19,7 +19,7 @@ locals {
     image_version = "latest" // não mudar
   }
 
-  container_startup_command = ["npm", "run", "migration:up"]
+  container_startup_command = ["npm", "run", "start"]
 
 
   hpa_replicas = {
