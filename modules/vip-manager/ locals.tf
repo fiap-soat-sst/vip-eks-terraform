@@ -1,8 +1,8 @@
 locals {
   namespace             = "vip-fiap-soat" // não mudar
-  application_main_name = "vip-compress-file"
-  app_short_name        = "vip-cmprss"
-  app_port              = 3125
+  application_main_name = "vip-manager"
+  app_short_name        = "vip-manager"
+  app_port              = 3126
   deployment_resources = {
     limits = {
       cpu    = "2"
@@ -15,11 +15,11 @@ locals {
   }
 
   docker = {
-    image_name    = "evilfeeh/vip-compress-file"
+    image_name    = "evilfeeh/vip-manager"
     image_version = "latest" // não mudar
   }
 
-  container_startup_command = ["npm", "run", "migration:up"]
+  container_startup_command = ["npm", "run", "start"]
 
 
   hpa_replicas = {
@@ -37,12 +37,11 @@ locals {
 
 
   secrets_data = {
-    DB_DATABASE = var.db_database
-    DB_HOST     = var.db_host
-    DB_PASSWORD = var.db_password
-    DB_PORT     = 3306
-    DB_TYPE     = var.db_type
-    DB_USERNAME = var.db_username
-    PORT        = 3000
+    AWS_REGION      = var.AWS_REGION
+    AWS_S3_BUCKET   = var.AWS_S3_BUCKET
+    AWS_TABLE_USERS = var.AWS_TABLE_USERS
+    AWS_SNS_TOPIC   = var.AWS_SNS_TOPIC
+    JWT_SECRET      = var.JWT_SECRET    
+    PORT            = 3000
   }
 }

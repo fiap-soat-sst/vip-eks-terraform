@@ -1,29 +1,24 @@
-variable "db_database" {
+variable "AWS_REGION" {
   default = "none"
   type    = string
 }
 
-variable "db_host" {
+variable "AWS_S3_BUCKET" {
   default = "none"
   type    = string
 }
 
-variable "db_password" {
+variable "AWS_TABLE_USERS" {
   default = "none"
   type    = string
 }
 
-variable "db_port" {
-  default = 3306
-  type    = number
-}
-
-variable "db_type" {
+variable "AWS_SNS_TOPIC" {
   default = "none"
   type    = string
 }
 
-variable "db_username" {
+variable "JWT_SECRET" {
   default = "none"
   type    = string
 }
