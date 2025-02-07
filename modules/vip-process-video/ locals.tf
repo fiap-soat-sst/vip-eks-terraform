@@ -37,12 +37,11 @@ locals {
 
 
   secrets_data = {
-    AWS_REGION='us-east-1'
-    AWS_S3_BUCKET_SOURCE='manager-upload-videos-hackaton'
-    AWS_S3_BUCKET_DESTINATION='process-upload-videos-hackaton'
-    AWS_TABLE_USERS='users'
-    AWS_SNS_TOPIC='arn:aws:sns:us-east-1:938703229189:compress-video'
-    PORT=3001
-    JWT_SECRET='QXJxdWl0ZXR1cmFEZVNvZnR3YXJlNlNPQVRGYXNlM1RlY2hDaGFsbGVuZ2U='
+    AWS_REGION = var.AWS_REGION
+    AWS_S3_BUCKET_SOURCE     = var.AWS_S3_BUCKET_SOURCE
+    AWS_S3_BUCKET_DESTINATION = var.AWS_S3_BUCKET_DESTINATION
+    AWS_TABLE_USERS     = var.AWS_TABLE_USERS
+    AWS_SNS_TOPIC     = var.AWS_SNS_TOPIC
+    PORT = var.PORT
   }
 }
