@@ -15,7 +15,7 @@ locals {
   }
 
   docker = {
-    image_name    = "tomasjr/vip-notification"
+    image_name    = "evilfeeh/vip-notification"
     image_version = "latest" // não mudar
   }
 
