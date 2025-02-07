@@ -2,7 +2,7 @@ locals {
   namespace             = "vip-fiap-soat" // não mudar
   application_main_name = "vip-compress-file"
   app_short_name        = "vip-cmprss"
-  app_port              = 3125
+  app_port              = 3127
   deployment_resources = {
     limits = {
       cpu    = "2"
@@ -19,8 +19,7 @@ locals {
     image_version = "latest" // não mudar
   }
 
-  container_startup_command = ["npm", "run", "migration:up"]
-
+  container_startup_command = ["npm", "start"]
 
   hpa_replicas = {
     min                               = 1
@@ -29,20 +28,18 @@ locals {
   }
 
   config_map_data = {
-    PORT            = var.port
-    SWAGGER_URL     = "localhost"
-    URL_DEPLOY      = "http://34.95.232.166"
-    URL_PAYMENT_API = "https://southamerica-east1-self-service-totem-428818.cloudfunctions.net/payment-fake"
+    PORT = local.app_port
+    AWS_DYNAMO_DATABASE="vip-video-table"
+    AWS_RAW_IMAGES_BUCKET="vip-soat-grouped-images-bucket"
+    AWS_ZIP_IMAGES_BUCKET="vip-soat-compacted-image-bucket"
+    SQS_REDIS_URL="redis://vip-redis-cluster.vkfqh8.0001.use1.cache.amazonaws.com:6379"
+    AWS_PROCESS_TO_COMPRESS_QUEUE="https://sqs.us-east-1.amazonaws.com/295258281009/processToCompressQueue.fifo"
   }
 
-
   secrets_data = {
-    DB_DATABASE = var.db_database
-    DB_HOST     = var.db_host
-    DB_PASSWORD = var.db_password
-    DB_PORT     = 3306
-    DB_TYPE     = var.db_type
-    DB_USERNAME = var.db_username
-    PORT        = 3000
+    AWS_ACCESS_KEY_ID=var.AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY=var.AWS_SECRET_ACCESS_KEY
+    AWS_SESSION_TOKEN=var.AWS_SESSION_TOKEN
+    AWS_REGION="us-east-1"
   }
 }

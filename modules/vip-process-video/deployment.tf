@@ -1,6 +1,6 @@
 resource "kubernetes_deployment" "deployment_api" {
 
-  depends_on = [kubernetes_config_map.mking_env, kubernetes_secret.mking_api_secrets]
+  depends_on = [kubernetes_config_map.config_map_api, kubernetes_secret.secrets_api]
 
   metadata {
     name      = local.application_main_name

@@ -1,34 +1,14 @@
-variable "db_database" {
+variable "AWS_ACCESS_KEY_ID" {
   default = "none"
   type    = string
 }
 
-variable "db_host" {
+variable "AWS_SECRET_ACCESS_KEY" {
   default = "none"
   type    = string
 }
 
-variable "db_password" {
+variable "AWS_SESSION_TOKEN" {
   default = "none"
   type    = string
-}
-
-variable "db_port" {
-  default = 3306
-  type    = number
-}
-
-variable "db_type" {
-  default = "none"
-  type    = string
-}
-
-variable "db_username" {
-  default = "none"
-  type    = string
-}
-
-variable "port" {
-  default = 3125
-  type    = number
 }
